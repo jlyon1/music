@@ -1,0 +1,10 @@
+[package]
+name = "music"
+version = "0.1.0"
+authors = ["Joseph Lyon <joeylyon1@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+reqwest = "0.9.11"
+serde_json = "1.0.39"
+http = "0.1.16"
