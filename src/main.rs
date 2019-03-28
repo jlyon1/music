@@ -57,14 +57,28 @@ fn main(){
     key = format!("{}",v["apiKey"].as_str().unwrap());
     
     let args: Vec<String> = env::args().collect();
-    if args.len() != 2{
+    if args.len() < 2 || args.len() > 3{
+        
         println!("Invalid args");
         return;
     }
+    let mut val: i32 = 1;
+
+    if args.len() == 3 {
+        val = args[2].parse::<i32>().unwrap();
+
+    }
+
     if args[1] == "next"{
-        next_song(&mut key);
+        for x in 0..val{
+            next_song(&mut key);
+        }
+
     }else if args[1] == "prev"{
-        prev_song(&mut key);
+        for x in 0..val{
+            prev_song(&mut key);
+
+        }
     }
 
 }
